@@ -21,10 +21,12 @@ pipeline {
 
     
                 '''
-            }
-        }
+             }
+         }
         stage('Test'){
             steps{
                 echo 'test plan'
+            }
+        }
     }
 }
