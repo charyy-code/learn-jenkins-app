@@ -11,7 +11,6 @@ pipeline {
             }
             steps {
                 sh '''
-                    
                     pwd
                     node --version
                     npm --version
@@ -19,19 +18,11 @@ pipeline {
                     npm run build
                     ls -la
 
-    
+                    # Test step inside Build
+                    test -f build/index.html
+                    npm test
                 '''
-             }
-         }
-        
-            steps{
-                sh '''
-                  test -f build/index.html
-                  npm test 
-
-                  '''
-
             }
-        
+        }
     }
 }
